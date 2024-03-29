@@ -1,0 +1,118 @@
+/* GENERAL */
+* {
+    background-color: var(--not-white);
+    font-family: 'SFProMedium';
+}
+
+/* FONTS */
+@font-face {
+    font-family: 'SFProBold';
+    src: url('./assets/fonts/SFPRODISPLAYBOLD.OTF');
+}
+
+@font-face {
+    font-family: 'SFProMedium';
+    src: url('./assets/fonts/SFPRODISPLAYMEDIUM.OTF');
+}
+
+@font-face {
+    font-family: 'SFProRegular';
+    src: url('./assets/fonts/SFPRODISPLAYREGULAR.OTF');
+}
+
+:root {
+    /* GREY SCALE */
+    --dark-grey: #121212;
+    --medium-grey: #444444;
+    --grey: #868686;
+    --light-grey: #dedede;
+    --white: #ffffff;
+
+    /* PALETTE 1 */
+    --dark-blue: #112D4E;
+    --blue: #3F72AF;
+    --light-blue: #DBE2EF;
+    --not-white: #F9F7F7;
+
+    --orange1: #ca7a55;
+    --yellow1: #fbd865;
+
+}
+
+nav {
+    display: flex;
+    align-items:center;
+    justify-content:flex-end;
+    padding-right: 5%;
+    background-color: transparent;
+
+    ul {
+        padding-inline-start: 0px;
+        background-color: transparent;
+    }
+
+
+    /* LIST ITEMS */
+    ul > li {
+        list-style-type: none;
+        display:inline-flex;
+        padding: 8px 16px;
+        background-color: transparent;
+    }
+
+    /* LINKS + TEXT */
+    a {
+        color: var(--orange1); /* text color */
+        text-decoration: none;
+        padding: 2px 8px;
+        border-radius: 3px;
+        background-color: transparent;
+
+    }
+    a:hover {
+        background-color: var(--orange1); /* background color on hover*/
+        color: var(--not-white); /* text color on hover*/
+        transform: scale(1.15);
+        transition: 0.55s;
+        cursor: pointer;
+        box-shadow: 0 0 12px 1px var(--orange1); /* box shadow color on hover*/
+    }
+}
+
+#section1 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+    width: 100%;
+    justify-content: space-evenly;
+    
+
+
+    h1 {
+        margin-top: 12px;
+        font-size: 32px;
+    }
+
+    #div1 {
+    margin-left: 2%;
+    font-size: 18px;
+}
+
+    #cube {
+        width: 500px;
+        background-color: transparent;
+    }
+}
+
+
+
+#section2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+    h1 {
+        margin-top: 12px;
+        font-size: 32px;
+    }
+
+}
