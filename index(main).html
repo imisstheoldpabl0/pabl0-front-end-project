@@ -25,11 +25,21 @@
                 <h1>What is TradeBoyAI?</h1>
                 <div id="div1">
                     <ul>
-                        <li><p>Reliable and lighting-fast market prices</p></li>
-                        <li><p>Keep track of your cryptocurrency assets</p></li>
-                        <li><p>View candlestick charts that date back up to 2 years</p></li>
-                        <li><p>Get AI trading suggestions with ground-breaking technology</p></li>
-                        <li><p>Use on the go with our mobile-friendly version</p></li>
+                        <li>
+                            <p>Reliable and lighting-fast market prices</p>
+                        </li>
+                        <li>
+                            <p>Keep track of your cryptocurrency assets</p>
+                        </li>
+                        <li>
+                            <p>View candlestick charts that date back up to 2 years</p>
+                        </li>
+                        <li>
+                            <p>Get AI trading suggestions with ground-breaking technology</p>
+                        </li>
+                        <li>
+                            <p>Use on the go with our mobile-friendly version</p>
+                        </li>
                     </ul>
                 </div>
             </article>
@@ -37,31 +47,60 @@
         </section>
 
         <section id="section2">
-            <h1>Create a free account today</h1>
+
+            <h1>Check out the demo below</h1>
+            <div id="buttons">
+
+                <div class="dropdown">
+                    <button class="dropbtn" id="crypto_button">CRYPTOCURRENCY</button>
+                    <div class="dropdown-content">
+                        <a href="javascript:void(0)" data-value="XBT">BTC</a>
+                        <a href="javascript:void(0)" data-value="XETH">ETH</a>
+                        <a href="javascript:void(0)" data-value="XBT">SOL</a>
+                        <a href="javascript:void(0)" data-value="XBT">XRP</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn" id="fiat_button">FIAT</button>
+                    <div class="dropdown-content">
+                        <a href="javascript:void(0)" data-value="USD">USD</a>
+                        <a href="javascript:void(0)" data-value="EUR">EUR</a>
+                        <a href="javascript:void(0)" data-value="GBP">GBP</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn" id="timeframe_button">TIMEFRAME</button>
+                    <div class="dropdown-content">
+                        <a href="javascript:void(0)" data-value="60">1H</a> <!-- 60mins -->
+                        <a href="javascript:void(0)" data-value="120">2H</a> <!-- 120mins -->
+                        <a href="javascript:void(0)" data-value="240">4H</a> <!-- 240mins -->
+                        <a href="javascript:void(0)" data-value="720">12H</a> <!-- 720mins -->
+                        <a href="javascript:void(0)" data-value="1440">24H</a> <!-- 1440mins -->
+                    </div>
+                </div>
+            </div>
+
+            <section>
+                <div id="x_chart">
+                    <script src="./dist/apexcharts.min.js"></script>
+                </div>
+            </section>
         </section>
 
-        <section id="section2">
-            <h1>Create a free account today</h1>
-        </section>
-        <section id="section2">
-            <h1>Create a free account today</h1>
-        </section>
-        <section id="section2">
-            <h1>Create a free account today</h1>
-        </section>
-        <section id="section2">
-            <h1>Create a free account today</h1>
-        </section>
-        <section id="section2">
-            <h1>Create a free account today</h1>
-        </section>
-        <section id="section2">
-            <h1>Create a free account today</h1>
-        </section>
-        <section id="section2">
-            <h1>Create a free account today</h1>
-        </section>
     </main>
-    <script src="./app.js"></script>
+    <script src="./index.js"></script>
 </body>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-links">
+            <a href="#">Home</a>
+            <a href="#">How to use</a>
+            <a href="#">Contact</a>
+            <a href="#">My Account</a>
+        </div>
+    </div>
+
 </html>

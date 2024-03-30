@@ -26,11 +26,11 @@ async function drawChartWithData() {
     }
 
     let pairing = `${cryptoCoin}${cryptoPair}` // Pairing is defined as the concatenation of the crypto coin and the pairing chosen
-    console.log(pairing); // Sometimes the object name in which the data is found is not strictly the combination of these two
+    console.log(pairing); // Sometimes the object name in which the data is found is not strictly the combination of these two!
 
     // Extract OHLC data from Kraken's API response
     const candles = data[pairing].map(candle => {
-      const [timestamp, open, high, low, close] = candle.slice(0, 5); // Extract first five values
+      const [timestamp, open, high, low, close] = candle.slice(0, 5); // Extract the first five values from data.result.${cryptoPairing}
       return {
         x: new Date(timestamp * 1000), // Convert timestamp to milliseconds
         y: [parseFloat(open), parseFloat(high), parseFloat(low), parseFloat(close)] // Convert OHLC values to numbers
@@ -87,14 +87,6 @@ async function drawChartWithData() {
   }
 }
 
-// Call the function to draw the chart with the fetched data
 drawChartWithData();
 
-window.onscroll = function () {
-  scrollRotate();
-};
 
-function scrollRotate() {
-  let image = document.getElementById("cube");
-  image.style.transform = "rotate(" + window.scrollY/2 + "deg)";
-}
