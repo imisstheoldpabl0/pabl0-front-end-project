@@ -105,26 +105,28 @@ nav {
     width: 100%;
     justify-content: space-evenly;
 
-
-
-    h1 {
-        margin-top: 12px;
-        font-size: 32px;
-        /* background: linear-gradient(33deg, rgba(237, 208, 162, 1) 0%, rgba(214, 188, 156, 1) 20%, rgba(188, 166, 149, 1) 40%, rgba(129, 102, 100, 1) 60%, rgba(87, 65, 68, 1) 80%, rgba(49, 32, 39, 1) 100%); */
-
-        background: rgb(237, 208, 162);
-        background: linear-gradient(33deg, rgba(237, 208, 162, 1) 0%, rgba(252, 206, 54, 1) 25%, rgba(202, 122, 85, 1) 50%, rgba(129, 102, 100, 1) 75%, rgba(49, 32, 39, 1) 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
+    #article1 {
+        margin-left: 12%;
+        h1 {
+            margin-top: 12px;
+            font-size: 32px;
+            /* background: linear-gradient(33deg, rgba(237, 208, 162, 1) 0%, rgba(214, 188, 156, 1) 20%, rgba(188, 166, 149, 1) 40%, rgba(129, 102, 100, 1) 60%, rgba(87, 65, 68, 1) 80%, rgba(49, 32, 39, 1) 100%); */
+    
+            background: rgb(237, 208, 162);
+            background: linear-gradient(33deg, rgba(237, 208, 162, 1) 0%, rgba(252, 206, 54, 1) 25%, rgba(202, 122, 85, 1) 50%, rgba(129, 102, 100, 1) 75%, rgba(49, 32, 39, 1) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    
+        #div1 {
+            margin-left: 2%;
+            font-size: 18px;
+        }
     }
-
-    #div1 {
-        margin-left: 2%;
-        font-size: 18px;
-    }
-
+    
     #cube {
+        margin-right: 12%;
         width: 500px;
         background-color: transparent;
     }
@@ -135,7 +137,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 12px;
+    margin-top: 5%;
 }
 
 /* BUTTONS + DROPDOWN */
