@@ -52,7 +52,7 @@
 
 }
 
-/* MAIN - NAV */
+/* NAV */
 nav {
     display: flex;
     align-items: center;
@@ -97,8 +97,48 @@ nav {
     }
 }
 
-/* MAIN - SECTION 1 */
-#section1 {
+/* FOOTER */
+footer {
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    padding: 12px 12px;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    text-align: center;
+
+    /* Style for the container inside the footer */
+    .footer-container {
+        margin: 0 auto;
+    }
+
+    /* Style for the links inside the footer */
+    .footer-links {
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-links a {
+        color: #020202;
+        text-decoration: none;
+        margin: 0 10px;
+        
+    }
+
+    .footer-links a:hover {
+        text-decoration: underline;
+        background: rgb(237, 208, 162);
+        background: linear-gradient(33deg, rgba(237, 208, 162, 1) 0%, rgba(252, 206, 54, 1) 25%, rgba(202, 122, 85, 1) 50%, rgba(129, 102, 100, 1) 75%, rgba(49, 32, 39, 1) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-animation-duration: 2s;
+        animation-duration: 2s;
+        
+    }
+}
+
+/* INDEX - MAIN - SECTION 1 */
+body > main > #section1 {
     display: flex;
     flex-direction: row;
     margin-top: 2%;
@@ -132,15 +172,15 @@ nav {
     }
 }
 
-/* MAIN - SECTION 2 */
-#section2 {
+/* INDEX - MAIN - SECTION 2 */
+body > main > #section2 {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 5%;
 }
 
-/* BUTTONS + DROPDOWN */
+/* INDEX - MAIN - DROPDOWN MENUS */
 #buttons {
     display: flex;
     margin-bottom: 24px;
@@ -202,47 +242,38 @@ nav {
 
 }
 
-/* FOOTER */
-footer {
-    background-color: transparent;
-    color: rgb(0, 0, 0);
-    padding: 12px 12px;
-    margin-top: 24px;
-    margin-bottom: 12px;
-    text-align: center;
+/* HOW_TO - MAIN - SECTION 1 */
+#section3 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+    width: 100%;
+    justify-content: space-evenly;
 
-    /* Style for the container inside the footer */
-    .footer-container {
-        margin: 0 auto;
+    #article3 {
+        margin-left: 12%;
+        h1 {
+            margin-top: 12px;
+            font-size: 32px;
+            /* background: linear-gradient(33deg, rgba(237, 208, 162, 1) 0%, rgba(214, 188, 156, 1) 20%, rgba(188, 166, 149, 1) 40%, rgba(129, 102, 100, 1) 60%, rgba(87, 65, 68, 1) 80%, rgba(49, 32, 39, 1) 100%); */
+    
+            background: rgb(237,208,162);
+            background: linear-gradient(33deg, rgba(237,208,162,1) 0%, rgba(252,206,54,1) 2%, rgba(202,122,85,1) 15%, rgba(129,102,100,1) 25%, rgba(49,32,39,1) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    
+        p {
+            margin-left: 2%;
+            font-size: 18px;
+            line-height: 24px;
+        }
     }
-
-    /* Style for the links inside the footer */
-    .footer-links {
-        display: flex;
-        justify-content: center;
-    }
-
-    .footer-links a {
-        color: #020202;
-        text-decoration: none;
-        margin: 0 10px;
-        
-    }
-
-    .footer-links a:hover {
-        text-decoration: underline;
-        background: rgb(237, 208, 162);
-        background: linear-gradient(33deg, rgba(237, 208, 162, 1) 0%, rgba(252, 206, 54, 1) 25%, rgba(202, 122, 85, 1) 50%, rgba(129, 102, 100, 1) 75%, rgba(49, 32, 39, 1) 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        -webkit-animation-duration: 2s;
-        animation-duration: 2s;
-        
+    
+    #cube {
+        margin-right: 12%;
+        width: 500px;
+        background-color: transparent;
     }
 }
-
-/* WHAT I STILL HAVE TO ADD:
-    - Media queries to adjust section 1
-    - Media queries to adjust chart size
-*/

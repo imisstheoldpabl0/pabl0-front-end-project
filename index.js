@@ -47,7 +47,7 @@ function addDropdownEventListeners() {
     const dropdownItems = document.querySelectorAll('.dropdown-content a');
 
     dropdownItems.forEach(item => {
-        item.addEventListener('click', function (event) {
+        item.addEventListener('click', async function (event) {
             // Prevent default action
             event.preventDefault();
 
@@ -74,7 +74,9 @@ function addDropdownEventListeners() {
                 document.getElementById("chartlength_button").innerHTML = `CHART LENGTH: ${itemText}`;
 
             }
-            drawChartWithData();
+          
+
+            await drawChartWithData();
             console.log(`Updated Values: ${cryptoCoin}, ${cryptoPair}, ${timeFrameInterval}, ${sinceInterval}`);
         });
     });
@@ -107,7 +109,12 @@ async function drawChartWithData() {
                 chart: {
                     type: 'candlestick',
                     width: 1090, // would be nice to obtain the current window size and pass it on as a variable. eg: let windowSize = 100vw (should equal a number in px). let chartWidth = windowSize / X;
-                    height: 600
+                    height: 600,
+                    events:{
+                        mounted:(chart)=>{
+                            chart.windowResizeHandler();
+                        }
+                    }
                 },
                 dataLabels: {
                     enabled: false
@@ -146,14 +153,17 @@ async function drawChartWithData() {
         );
 
         x_chart.render();
+        return x_chart;
+
     } catch (error) {
         console.error('Error drawing chart:', error);
     }
 }
 
-function indexDemo() {
+async function indexDemo() {
 
     addDropdownEventListeners();
-    drawChartWithData();
+    await drawChartWithData();
 }
 indexDemo();
+
