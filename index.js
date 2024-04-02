@@ -90,8 +90,6 @@ function addDropdownEventListeners() {
 // Draw the chart
 async function drawChartWithData() {
 
-
-
     try {
         let data = await getData(); // Retrieves API data
         if (!data) {
