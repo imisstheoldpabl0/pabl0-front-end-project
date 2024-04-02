@@ -74,7 +74,7 @@ function addDropdownEventListeners() {
                 document.getElementById("chartlength_button").innerHTML = `CHART LENGTH: ${itemText}`;
 
             }
-            
+
             await drawChartWithData();
             console.log(`Updated Values: ${cryptoCoin}, ${cryptoPair}, ${timeFrameInterval}, ${sinceInterval}`);
         });
@@ -83,6 +83,9 @@ function addDropdownEventListeners() {
 
 // Draw the chart
 async function drawChartWithData() {
+
+    let screenWidth = window.innerWidth;
+    let screenHeight = window.innerHeight;
 
     try {
         let data = await getData(); // Retrieves API data
@@ -109,8 +112,8 @@ async function drawChartWithData() {
                     type: 'candlestick',
                     width: 1090, // would be nice to obtain the current window size and pass it on as a variable. eg: let windowSize = 100vw (should equal a number in px). let chartWidth = windowSize / X;
                     height: 600,
-                    events:{
-                        mounted:(chart)=>{
+                    events: {
+                        mounted: (chart) => {
                             chart.windowResizeHandler();
                         }
                     }

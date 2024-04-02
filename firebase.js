@@ -1,5 +1,4 @@
 /* FIREBASE */
-
 const firebaseConfig = {
     apiKey: "AIzaSyAz26KxPIpMItdKXUtqLvIUIDWAacPuEkk",
     authDomain: "tradeboyai.firebaseapp.com",
@@ -10,13 +9,9 @@ const firebaseConfig = {
   };
 
 firebase.initializeApp(firebaseConfig); // Initializes Firebase App
-
 const db = firebase.firestore(); // Initializes Firestore
 
-
-
 // FIRESTORE USERS COLLECTION
-
 const createUser = (user) => {
     db.collection("users")
         .add(user)
@@ -25,7 +20,6 @@ const createUser = (user) => {
 };
 
 //FIREBASE AUTH
-
 const signUpUser = (email, password) => {
     firebase
         .auth()
@@ -97,8 +91,6 @@ document.getElementById("form2").addEventListener("submit", function (event) {
     let pass = event.target.elements.pass3.value;
     signInUser(email, pass)
 })
-
-
 
 
 document.getElementById("salir").addEventListener("click", signOut);
