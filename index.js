@@ -13,7 +13,7 @@ function imageScroll() {
 imageScroll();
 
 
-
+// Hello world
 /* DEFAULT PARAMETERS (DO NOT TOUCH) */
 let cryptoCoin = 'XETH'; // XXBT -> bitcoin
 let cryptoPair = 'ZUSD'; // ZUSD -> us dollar
