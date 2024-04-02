@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>TradeBoyAI</title>
+</head>
+
+<body>
+    <main>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#" class="logo">Home</a></li>
+                    <li><a href="./pages/how_to_use.html">How to use</a></li>
+                    <li><a href="./pages/contact.html">Contact</a></li>
+                    <li><a href="./pages/my_account.html">My Account</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section id="section1">
+            <article id="article1">
+                <h1>What is TradeBoyAI?</h1>
+                <div id="div1">
+                    <ul>
+                        <li>
+                            <p>Reliable and lighting-fast market prices</p>
+                        </li>
+                        <li>
+                            <p>Keep track of your cryptocurrency assets</p>
+                        </li>
+                        <li>
+                            <p>View candlestick charts that date back up to 2 years</p>
+                        </li>
+                        <li>
+                            <p>Get AI trading suggestions with ground-breaking technology</p>
+                        </li>
+                        <li>
+                            <p>Use on the go with our mobile-friendly version</p>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+            <img src="./assets/images/cube_only2.png" alt="cube" id="cube">
+        </section>
+
+        <section id="section2">
+
+            <h1>Check out the demo below</h1>
+            <div id="buttons">
+
+                <div class="dropdown">
+                    <button class="dropbtn" id="crypto_button">CRYPTOCURRENCY</button>
+                    <div class="dropdown-content">
+                        <a href="#" data-value="XXBT">BTC</a>
+                        <a href="#" data-value="XETH">ETH</a>
+                        <a href="#" data-value="XXLM">XLM</a>
+                        <a href="#" data-value="XXRP">XRP</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn" id="fiat_button">FIAT</button>
+                    <div class="dropdown-content" id="dropdown-content">
+                        <a href="#" data-value="ZUSD">USD</a>
+                        <a href="#" data-value="ZEUR">EUR</a>
+                        <a href="#" data-value="ZGBP">GBP</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn" id="timeframe_button">TIME-FRAME</button>
+                    <div class="dropdown-content">
+                        <a href="#" data-value="60">1H</a> <!-- 60mins -->
+                        <a href="#" data-value="240">4H</a> <!-- 240mins -->
+                        <a href="#" data-value="1440">24H</a> <!-- 1440mins -->
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn" id="chartlength_button">CHART LENGTH</button>
+                    <div class="dropdown-content">
+                        <a href="#" data-value="604800">1 WEEK</a> <!-- Get current date in epoch-->
+                        <a href="#" data-value="1209600">2 WEEKS</a>
+                        <a href="#" data-value="2629743">1 MONTH</a>
+                        <a href="#" data-value="31556926">1 YEAR</a>
+                        <a href="#" data-value="63113852">2 YEARS</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <section>
+                <div id="x_chart">
+                    <script src="./dist/apexcharts.min.js"></script>
+                </div>
+            </section>
+        </section>
+
+    </main>
+    <script src="./index.js"></script>
+</body>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-links">
+            <a href="#">Home</a>
+            <a href="#">How to use</a>
+            <a href="#">Contact</a>
+            <a href="#">My Account</a>
+        </div>
+    </div>
+
+</html>

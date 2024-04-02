@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>TradeBoyAI - How to use</title>
+</head>
+
+<body>
+    <main>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="../index.html" class="logo">Home</a></li>
+                    <li><a href="#">How to use</a></li>
+                    <li><a href="./pages/contact.html">Contact</a></li>
+                    <li><a href="./pages/myaccount.html" id="userInSystem">My Account</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section id="section_account">
+            <h1>Login or Create an account</h1>
+
+            <div id="forms-container">
+                <div>
+                    <h3>Create an account</h3>
+                    <form id="form1" action="#" method="POST">
+                        <div>
+                            <label for="email">Email:</label><br>
+                            <input type="email" id="email" name="email" placeholder="Enter your username..."><br>
+                            <label for="pass">Password:</label><br>
+                            <input type="password" id="pass" name="pass" placeholder="Enter your password..."><br>
+                            <label for="pass2">Repite password:</label><br>
+                            <input type="password" id="pass2" name="pass2" placeholder="Repeat your password..."><br>
+                            <input type="submit" value="Create account">
+                        </div>
+                    </form>
+                </div>
+
+                <div>
+                    <h3>Login to an existing account</h3>
+                    <form id="form2" action="#" method="POST">
+                        <div>
+                            <label for="email2">Email:</label><br>
+                            <input type="email" id="email2" name="email2" placeholder="Introduce email..."><br>
+                            <label for="pass3">Password:</label><br>
+                            <input type="password" id="pass3" name="pass3" placeholder="Introduce password..."><br>
+                            <input type="submit" value="Login">
+                            <div id="logout">
+                                <button id="salir">Logout</button>
+                            </div>
+                        </div>
+
+
+                    </form>
+
+
+
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="../firebase.js"></script>
+</body>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="#">How to use</a>
+            <a href="#">Contact</a>
+            <a href="#">My Account</a>
+        </div>
+    </div>
+
+</html>
