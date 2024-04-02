@@ -64,7 +64,7 @@ function addDropdownEventListeners() {
                 cryptoPair = value;
                 document.getElementById("fiat_button").innerHTML = `FIAT: ${itemText}`;
 
-            } else if (['60', '240', '720', '1440'].includes(value)) {
+            } else if (['60', '240', '1440'].includes(value)) {
                 timeFrameInterval = value;
                 document.getElementById("timeframe_button").innerHTML = `TIMEFRAME: ${itemText}`;
 
@@ -74,8 +74,7 @@ function addDropdownEventListeners() {
                 document.getElementById("chartlength_button").innerHTML = `CHART LENGTH: ${itemText}`;
 
             }
-          
-
+            
             await drawChartWithData();
             console.log(`Updated Values: ${cryptoCoin}, ${cryptoPair}, ${timeFrameInterval}, ${sinceInterval}`);
         });

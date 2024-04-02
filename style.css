@@ -247,8 +247,9 @@ body > main > #section2 {
     display: flex;
     flex-direction: row;
     margin-top: 2%;
-    width: 100%;
-    justify-content: space-evenly;
+    width: 80%;
+    justify-content: center;
+    
 
     #article3 {
         margin-left: 12%;
@@ -264,16 +265,55 @@ body > main > #section2 {
             -webkit-text-fill-color: transparent;
         }
     
-        p {
+        div3 > p {
             margin-left: 2%;
             font-size: 18px;
-            line-height: 24px;
+            line-height: 26px;
         }
     }
-    
-    #cube {
-        margin-right: 12%;
-        width: 500px;
-        background-color: transparent;
+}
+
+/* HOW_TO - MAIN - SECTION 2 */
+#section4 {
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+
+    #gif {
+        width: 60%;
+    }
+
+}
+
+/* MY_ACCOUNT - MAIN - SECTION 2 */
+
+#forms-container {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 15%;
+    margin-right: 15%;
+
+    #form1 {
+        display: flex;
+        justify-content: center;
+
+        input {
+            width: 148px;
+            height: 18px;
+            margin-top: 4px;
+            margin-bottom: 8px;
+        }
+    }
+
+    #form2 {
+        display: flex;
+        justify-content: center;
+
+        input {
+            width: 148px;
+            height: 18px;
+            margin-top: 4px;
+            margin-bottom: 8px;
+        }
     }
 }
