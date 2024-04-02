@@ -25,6 +25,12 @@ let sinceReadable = new Date(sinceInterval * 1000) // converted to regular date 
 
 let timeFrameReadable = timeFrameInterval / 60; // converted to hours to display on the chart
 
+let screenWidth = window.innerWidth;
+let screenHeight = window.innerHeight;
+
+let newWidth = Math.round(screenWidth * 0.7); // old width = 1090
+let newHeight = Math.round(screenHeight * 0.75); // old height = 600
+
 // Returns the data from the OHLC endpoint from a specific asset pair
 async function getData() {
 
@@ -84,8 +90,7 @@ function addDropdownEventListeners() {
 // Draw the chart
 async function drawChartWithData() {
 
-    let screenWidth = window.innerWidth;
-    let screenHeight = window.innerHeight;
+
 
     try {
         let data = await getData(); // Retrieves API data
@@ -110,8 +115,8 @@ async function drawChartWithData() {
             {
                 chart: {
                     type: 'candlestick',
-                    width: 1090, // would be nice to obtain the current window size and pass it on as a variable. eg: let windowSize = 100vw (should equal a number in px). let chartWidth = windowSize / X;
-                    height: 600,
+                    width: newWidth, // would be nice to obtain the current window size and pass it on as a variable. eg: let windowSize = 100vw (should equal a number in px). let chartWidth = windowSize / X;
+                    height: newHeight,
                     events: {
                         mounted: (chart) => {
                             chart.windowResizeHandler();
