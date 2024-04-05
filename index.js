@@ -14,29 +14,103 @@ imageScroll();
 
 
 
-/* DEFAULT PARAMETERS (DO NOT TOUCH) */
-let cryptoCoin = 'XETH'; // XXBT -> bitcoin
-let cryptoPair = 'ZUSD'; // ZUSD -> us dollar
-let timeFrameInterval = '1440'; // represents candle length 1440/60=24h (1 candle = 1 day)
 
-let sinceInterval = '1704067200'; // represents the time since when the data is fetched -> january 1st 2024
-let sinceReadable = new Date(sinceInterval * 1000) // converted to regular date to display in the chart
+
+/* DEFAULT PARAMETERS (DO NOT TOUCH) */
+let cryptoCoin = 'XETH'; // XXBT -> Bitcoin
+let cryptoPair = 'ZUSD'; // ZUSD -> US dollar
+let timeFrameInterval = '1440'; // Represents candle length 1440min/60min=24h (1 candle = 1 day) -> Default: 24h
+
+let sinceInterval = '1704067200'; // Represents the time since when the data is fetched in Unix Timestamp-> Default: january 1st 2024
+let sinceReadable = new Date(sinceInterval * 1000) // converted to milliseconds regular date to display in the chart
 //console.log(sinceReadable);
 
-let timeFrameReadable = timeFrameInterval / 60; // converted to hours to display on the chart
+let timeFrameReadable = timeFrameInterval / 60; // converted to hours to display on the chart -> Not used
 
-let screenWidth = window.innerWidth;
-let screenHeight = window.innerHeight;
+/* RESIZE CHART BASE ON WINDOW SIZE */
+let newWidth = Math.round(window.innerWidth * 0.8);
+let newHeight = Math.round(window.innerHeight * 0.75);
 
-let newWidth = Math.round(screenWidth * 0.7); // old width = 1090
-let newHeight = Math.round(screenHeight * 0.75); // old height = 600
+/* function pickDate() {
+
+    // Displays the calendar and saves the user's option as date (js-datepicker library)
+    const picker = datepicker(document.getElementById("datePicker"), {
+        // Event callbacks.
+        onSelect: instance => {
+
+            // Show which date was selected.
+            let selectedDate = instance.dateSelected;
+            console.log('This is the selected date: ' + selectedDate); // Logs selected date
+
+            let selectedDateInMs = Date.parse(selectedDate); // Turns selectedDate into milliseconds
+            console.log('This is the selected date in milliseconds: ' + selectedDateInMs);
+
+            let unixTimestamp = Math.floor(selectedDateInMs / 1000); // Turns selectedDateInMs into Unix Timestamp (chart)
+            console.log('This is the selected date un Unix: ' + unixTimestamp);
+
+            let now = Math.floor(Date.now() / 1000);
+            console.log('This is the current date un Unix: ' + now);
+
+            sinceInterval = String(now - unixTimestamp);
+            console.log('This is the current date minus the selected date in Unix: ' + sinceInterval);
+
+            console.log(picker);
+
+            //document.getElementById("chartlength_button").innerHTML = `CHART LENGTH: ${selectedDate}`
+        },
+        onShow: instance => {
+            //console.log('Calendar showing.')
+        },
+        onHide: instance => {
+            //console.log('Calendar hidden.')
+        },
+        onMonthChange: instance => {
+            // Show the month of the selected date.
+            //console.log(instance.currentMonthName)
+        },
+
+        // Customizations.
+        formatter: (input, date, instance) => {
+            // This will display the date as `1/1/2019`.
+            input.value = date.toDateString()
+        },
+        position: 'bl', // Bottom left.
+        startDay: 1, // Calendar week starts on a Monday.
+        customDays: ['S', 'M', 'T', 'W', 'Th', 'F', 'S'],
+        customMonths: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        overlayButton: 'Go!',
+        overlayPlaceholder: 'Enter a 4-digit year',
+
+        // Settings.
+        alwaysShow: false, // Never hide the calendar.
+        dateSelected: new Date(), // Today is selected.
+        maxDate: new Date(2099, 0, 1), // Jan 1st, 2099.
+        minDate: new Date(2016, 5, 1), // June 1st, 2016.
+        startDate: new Date(), // This month.
+        showAllDates: true, // Numbers for leading & trailing days outside the current month will show.
+
+        // Disabling things.
+        noWeekends: false, // Saturday's and Sunday's will be unselectable.
+        disabler: date => (date.getDay() === 2 && date.getMonth() === 9), // Disabled every Tuesday in October
+        disabledDates: [new Date(2050, 0, 1), new Date(2050, 0, 3)], // Specific disabled dates.
+        disableMobile: true, // Conditionally disabled on mobile devices.
+        disableYearOverlay: true, // Clicking the year or month will *not* bring up the year overlay.
+
+        // ID - be sure to provide a 2nd picker with the same id to create a daterange pair.
+        id: 1
+    });
+
+}
+pickDate();
+ */
+
 
 // Returns the data from the OHLC endpoint from a specific asset pair
 async function getData() {
 
-    const url = `https://api.kraken.com/0/public/OHLC?pair=${cryptoCoin}${cryptoPair}&interval=${timeFrameInterval}&since=${sinceInterval}`
-    console.log(url);
     try {
+        const url = `https://api.kraken.com/0/public/OHLC?pair=${cryptoCoin}${cryptoPair}&interval=${timeFrameInterval}&since=${sinceInterval}`
+        console.log(url);
         let response = await fetch(url); // Fetches the provided URL with parameters from the user
         let data = await response.json();
         return data.result; // Return only the result data
@@ -47,14 +121,14 @@ async function getData() {
     }
 }
 
-// Handle users's choices
+// Handles users's choices
 function addDropdownEventListeners() {
 
     const dropdownItems = document.querySelectorAll('.dropdown-content a');
 
     dropdownItems.forEach(item => {
         item.addEventListener('click', async function (event) {
-            // Prevent default action
+            // Prevents default action of navigating to #
             event.preventDefault();
 
             const value = this.getAttribute('data-value');
@@ -82,12 +156,15 @@ function addDropdownEventListeners() {
             }
 
             await drawChartWithData();
-            console.log(`Updated Values: ${cryptoCoin}, ${cryptoPair}, ${timeFrameInterval}, ${sinceInterval}`);
+            console.log(`Updated Values: ${cryptoCoin}, ${cryptoPair}, ${timeFrameInterval}`);
         });
     });
 }
 
-// Draw the chart
+
+
+
+// Draw the chart (js-apexcharts library)
 async function drawChartWithData() {
 
     try {
@@ -113,7 +190,7 @@ async function drawChartWithData() {
             {
                 chart: {
                     type: 'candlestick',
-                    width: newWidth, // would be nice to obtain the current window size and pass it on as a variable. eg: let windowSize = 100vw (should equal a number in px). let chartWidth = windowSize / X;
+                    width: newWidth,
                     height: newHeight,
                     events: {
                         mounted: (chart) => {
@@ -165,6 +242,7 @@ async function drawChartWithData() {
     }
 }
 
+// Executes 
 async function indexDemo() {
 
     addDropdownEventListeners();
