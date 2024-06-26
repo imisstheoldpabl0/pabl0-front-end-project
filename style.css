@@ -391,6 +391,7 @@ body>main>#section2 {
         margin-left: 12%;
 
         h1 {
+            margin-top: 12px;
             font-size: 32px;
             /* background: linear-gradient(33deg, rgba(237, 208, 162, 1) 0%, rgba(214, 188, 156, 1) 20%, rgba(188, 166, 149, 1) 40%, rgba(129, 102, 100, 1) 60%, rgba(87, 65, 68, 1) 80%, rgba(49, 32, 39, 1) 100%); */
             background: rgb(237, 208, 162);
