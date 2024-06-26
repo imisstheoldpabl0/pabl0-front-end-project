@@ -13,11 +13,8 @@ function imageScroll() {
 imageScroll();
 
 
-
-
-
 /* DEFAULT PARAMETERS (DO NOT TOUCH) */
-let cryptoCoin = 'XETH'; // XXBT -> Bitcoin
+let cryptoCoin = 'XETH'; // XXETH -> Bitcoin
 let cryptoPair = 'ZUSD'; // ZUSD -> US dollar
 let timeFrameInterval = '1440'; // Represents candle length 1440min/60min=24h (1 candle = 1 day) -> Default: 24h
 
@@ -31,7 +28,10 @@ let timeFrameReadable = timeFrameInterval / 60; // converted to hours to display
 let newWidth = Math.round(window.innerWidth * 0.8);
 let newHeight = Math.round(window.innerHeight * 0.75);
 
-/* function pickDate() {
+
+// pickDate() --> Doesn't work since the API doesn't allow to fetch data from a specific date
+/*
+function pickDate() {
 
     // Displays the calendar and saves the user's option as date (js-datepicker library)
     const picker = datepicker(document.getElementById("datePicker"), {
@@ -102,7 +102,7 @@ let newHeight = Math.round(window.innerHeight * 0.75);
 
 }
 pickDate();
- */
+*/
 
 
 // Returns the data from the OHLC endpoint from a specific asset pair
@@ -120,6 +120,7 @@ async function getData() {
         return null;
     }
 }
+
 
 // Handles users's choices
 function addDropdownEventListeners() {
@@ -139,10 +140,12 @@ function addDropdownEventListeners() {
             if (['XXBT', 'XETH', 'XXLM', 'XXRP'].includes(value)) {
                 cryptoCoin = value;
                 document.getElementById("crypto_button").innerHTML = `CRYPTOCURRENCY: ${itemText}`;
+                cryptoName = itemText;
 
             } else if (['ZUSD', 'ZEUR', 'ZGBP'].includes(value)) {
                 cryptoPair = value;
                 document.getElementById("fiat_button").innerHTML = `FIAT: ${itemText}`;
+                cryptoName = itemText;
 
             } else if (['60', '240', '1440'].includes(value)) {
                 timeFrameInterval = value;
@@ -160,8 +163,6 @@ function addDropdownEventListeners() {
         });
     });
 }
-
-
 
 
 // Draw the chart (js-apexcharts library)
@@ -241,6 +242,7 @@ async function drawChartWithData() {
         console.error('Error drawing chart:', error);
     }
 }
+
 
 // Executes 
 async function indexDemo() {
