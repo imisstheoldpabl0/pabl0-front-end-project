@@ -1,4 +1,5 @@
 # TradeBoyAI
+- **Visit the webpage:** - https://imisstheoldpabl0.github.io/pabl0-front-end-project/
 
 ## Overview
 TradeBoyAI is a cutting-edge web application designed for cryptocurrency enthusiasts and traders. It offers real-time data, insightful analytics, and visualizations to help users make informed trading decisions. Powered by AI, TradeBoyAI aims to revolutionize the way you trade by providing lightning-fast market prices, asset tracking, and predictive trading suggestions.
@@ -30,8 +31,6 @@ TradeBoyAI is a cutting-edge web application designed for cryptocurrency enthusi
 
 ## Getting Started
 To explore TradeBoyAI, simply visit our homepage and start by checking out the demo. Customize your chart views and, if interested, sign up for an account to unlock more features.
-
-- **Visit the webpage:** - https://imisstheoldpabl0.github.io/pabl0-front-end-project/
 
 ## Feedback and Contributions
 We value your feedback and contributions. If you have suggestions or want to contribute to the project, please contact us through the "Contact" page.
